@@ -1,0 +1,295 @@
+/*
+ * OneShot — tema azul.
+ *   fundo escuro   #0b1a2e / #10243f
+ *   superfície     #16305a
+ *   destaque       #2f8cff (configurável; aplicado via estilo inline)
+ *   texto/ícones   #ffffff
+ */
+
+/* ---------------------------- Painel superior ---------------------------- */
+.oneshot-panel-button .system-status-icon {
+    icon-size: 16px;
+}
+
+.oneshot-menu .popup-menu-item:hover {
+    background-color: rgba(47, 140, 255, 0.18);
+}
+
+/* -------------------------------- Overlay -------------------------------- */
+.oneshot-overlay {
+    background-color: transparent;
+}
+
+.oneshot-selection {
+    border: 2px solid #2f8cff;
+    background-color: transparent;
+}
+
+.oneshot-hover {
+    border: 2px solid #2f8cff;
+    border-radius: 6px;
+}
+
+.oneshot-handle {
+    background-color: #2f8cff;
+    border: 2px solid #ffffff;
+    border-radius: 99px;
+}
+
+.oneshot-size-label {
+    background-color: rgba(11, 26, 46, 0.92);
+    color: #ffffff;
+    font-size: 9.5pt;
+    font-weight: 600;
+    font-feature-settings: "tnum";
+    padding: 3px 8px;
+    border-radius: 7px;
+}
+
+/* --------------------------------- Lupa --------------------------------- */
+.oneshot-magnifier {
+    border: 2px solid #2f8cff;
+    border-radius: 12px;
+    background-color: #0b1a2e;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.oneshot-magnifier-cross {
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.oneshot-magnifier-info {
+    background-color: rgba(11, 26, 46, 0.94);
+    color: #ffffff;
+    font-size: 9pt;
+    font-feature-settings: "tnum";
+    padding: 4px 8px;
+    border-radius: 8px;
+    spacing: 6px;
+}
+
+.oneshot-mag-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* ------------------------- Barras (modos/ferramentas) ------------------------- */
+.oneshot-modebar,
+.oneshot-toolbar,
+.oneshot-actionbar {
+    background-color: rgba(16, 36, 63, 0.97);
+    border: 1px solid rgba(47, 140, 255, 0.35);
+    border-radius: 14px;
+    padding: 5px;
+    spacing: 2px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.oneshot-button {
+    color: #ffffff;
+    padding: 7px;
+    border-radius: 9px;
+    background-color: transparent;
+    transition-duration: 120ms;
+}
+
+.oneshot-button:hover {
+    background-color: rgba(47, 140, 255, 0.28);
+}
+
+.oneshot-button:active {
+    background-color: rgba(47, 140, 255, 0.45);
+}
+
+.oneshot-button:checked {
+    background-color: #2f8cff;
+}
+
+.oneshot-button.oneshot-small {
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.oneshot-button.oneshot-danger:hover {
+    background-color: rgba(255, 74, 87, 0.55);
+}
+
+.oneshot-separator {
+    width: 1px;
+    margin: 6px 4px;
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.oneshot-separator-h {
+    height: 1px;
+    margin: 4px 6px;
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.oneshot-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 99px;
+    border: 2px solid #ffffff;
+}
+
+.oneshot-width-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 8.5pt;
+    font-feature-settings: "tnum";
+    min-width: 34px;
+    text-align: center;
+}
+
+.oneshot-hint {
+    background-color: rgba(11, 26, 46, 0.88);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 9.5pt;
+    padding: 6px 12px;
+    border-radius: 10px;
+}
+
+/* ------------------------------- Tooltips ------------------------------- */
+.oneshot-tooltip {
+    background-color: #0b1a2e;
+    color: #ffffff;
+    font-size: 9pt;
+    padding: 5px 9px;
+    border-radius: 8px;
+    border: 1px solid rgba(47, 140, 255, 0.45);
+}
+
+/* ------------------------------- Popovers ------------------------------- */
+.oneshot-popover {
+    background-color: rgba(16, 36, 63, 0.98);
+    border: 1px solid rgba(47, 140, 255, 0.4);
+    border-radius: 14px;
+    padding: 10px;
+    spacing: 8px;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.oneshot-palette {
+    spacing: 6px;
+}
+
+.oneshot-palette-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    transition-duration: 100ms;
+}
+
+.oneshot-palette-swatch:hover {
+    border-color: #ffffff;
+}
+
+.oneshot-popover-row {
+    spacing: 6px;
+}
+
+.oneshot-popover-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 9.5pt;
+}
+
+.oneshot-popover-title {
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 0 4px 4px;
+}
+
+.oneshot-popover-value {
+    min-width: 42px;
+    text-align: center;
+    font-feature-settings: "tnum";
+}
+
+.oneshot-hex-entry {
+    background-color: #0b1a2e;
+    color: #ffffff;
+    border: 1px solid rgba(47, 140, 255, 0.4);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-family: monospace;
+}
+
+.oneshot-hex-entry:focus {
+    border-color: #2f8cff;
+}
+
+.oneshot-app-row {
+    color: #ffffff;
+    border-radius: 9px;
+    padding: 6px 8px;
+}
+
+.oneshot-app-row:hover {
+    background-color: rgba(47, 140, 255, 0.28);
+}
+
+.oneshot-app-row-box {
+    spacing: 10px;
+}
+
+/* ---------------------------- Contagem regressiva ---------------------------- */
+.oneshot-countdown {
+    width: 120px;
+    height: 120px;
+    border-radius: 99px;
+    border: 4px solid #2f8cff;
+    background-color: rgba(11, 26, 46, 0.9);
+    color: #ffffff;
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+/* ------------------------------- Imagem fixada ------------------------------- */
+.oneshot-pin {
+    border-radius: 6px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(47, 140, 255, 0.7);
+}
+
+.oneshot-pin-bar {
+    background-color: rgba(11, 26, 46, 0.9);
+    border-radius: 9px;
+    padding: 2px;
+    spacing: 2px;
+}
+
+/* ------------------------------ Gravação (painel) ------------------------------ */
+.oneshot-rec-box {
+    spacing: 6px;
+}
+
+.oneshot-rec-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 99px;
+    background-color: #ff4a57;
+}
+
+.oneshot-rec-dot.paused {
+    background-color: #ffb020;
+}
+
+.oneshot-rec-time {
+    font-feature-settings: "tnum";
+    font-weight: bold;
+}
+
+.oneshot-rec-button {
+    padding: 3px;
+    border-radius: 99px;
+    color: #ffffff;
+}
+
+.oneshot-rec-button:hover {
+    background-color: rgba(47, 140, 255, 0.4);
+}

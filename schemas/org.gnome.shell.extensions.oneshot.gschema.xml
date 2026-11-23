@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Esquema de configurações da extensão OneShot.
+  Todas as chaves usadas por todas as etapas ficam aqui, para que o
+  prefs.js e a extensão compartilhem a mesma fonte de verdade.
+-->
+<schemalist gettext-domain="oneshot">
+
+  <enum id="org.gnome.shell.extensions.oneshot.ImageFormat">
+    <value nick="png" value="0"/>
+    <value nick="jpg" value="1"/>
+    <value nick="webp" value="2"/>
+  </enum>
+
+  <enum id="org.gnome.shell.extensions.oneshot.VideoQuality">
+    <value nick="low" value="0"/>
+    <value nick="medium" value="1"/>
+    <value nick="high" value="2"/>
+    <value nick="lossless" value="3"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.oneshot" path="/org/gnome/shell/extensions/oneshot/">
+
+    <!-- ===================== Atalhos ===================== -->
+    <key name="shortcut-region" type="as">
+      <default><![CDATA[['<Super><Shift>s']]]></default>
+      <summary>Capturar região</summary>
+    </key>
+    <key name="shortcut-fullscreen" type="as">
+      <default><![CDATA[['<Super><Shift>f']]]></default>
+      <summary>Capturar tela inteira</summary>
+    </key>
+    <key name="shortcut-window" type="as">
+      <default><![CDATA[['<Super><Shift>w']]]></default>
+      <summary>Capturar janela</summary>
+    </key>
+    <key name="shortcut-record-toggle" type="as">
+      <default><![CDATA[['<Super><Shift>r']]]></default>
+      <summary>Iniciar/parar gravação</summary>
+    </key>
+    <key name="shortcut-record-pause" type="as">
+      <default><![CDATA[['<Super><Shift>p']]]></default>
+      <summary>Pausar/retomar gravação</summary>
+    </key>
+    <key name="shortcut-repeat-last" type="as">
+      <default><![CDATA[['<Super><Shift>l']]]></default>
+      <summary>Repetir última captura</summary>
+    </key>
+    <key name="shortcut-annotate-toggle" type="as">
+      <default><![CDATA[['<Super><Shift>a']]]></default>
+      <summary>Alternar anotação ao vivo (durante a gravação)</summary>
+    </key>
+    <key name="shortcut-annotate-clear" type="as">
+      <default><![CDATA[['<Super><Shift>c']]]></default>
+      <summary>Limpar anotações ao vivo</summary>
+    </key>
+
+    <!-- ===================== Notificações ===================== -->
+    <key name="notify-capture" type="b">
+      <default>true</default>
+      <summary>Notificar ao capturar</summary>
+    </key>
+    <key name="notify-recording" type="b">
+      <default>true</default>
+      <summary>Notificar ao terminar gravação</summary>
+    </key>
+
+    <!-- ===================== Arquivos ===================== -->
+    <key name="screenshot-dir" type="s">
+      <default>''</default>
+      <summary>Pasta das capturas (vazio = pasta padrão do sistema)</summary>
+    </key>
+    <key name="video-dir" type="s">
+      <default>''</default>
+      <summary>Pasta dos vídeos (vazio = pasta padrão do sistema)</summary>
+    </key>
+    <key name="image-format" enum="org.gnome.shell.extensions.oneshot.ImageFormat">
+      <default>'png'</default>
+      <summary>Formato da imagem</summary>
+    </key>
+    <key name="image-quality" type="i">
+      <range min="1" max="100"/>
+      <default>92</default>
+      <summary>Qualidade (JPG/WebP)</summary>
+    </key>
+    <key name="filename-pattern" type="s">
+      <default>'OneShot_%Y-%m-%d_%H-%M-%S'</default>
+      <summary>Padrão do nome do arquivo (strftime + {mode})</summary>
+    </key>
+
+    <!-- ===================== Comportamento da captura ===================== -->
+    <key name="auto-copy" type="b">
+      <default>true</default>
+      <summary>Copiar para a área de transferência automaticamente</summary>
+    </key>
+    <key name="default-delay" type="i">
+      <range min="0" max="60"/>
+      <default>3</default>
+      <summary>Atraso padrão do timer (segundos)</summary>
+    </key>
+    <key name="include-cursor" type="b">
+      <default>false</default>
+      <summary>Incluir o cursor nas capturas</summary>
+    </key>
+    <key name="capture-sound" type="b">
+      <default>true</default>
+      <summary>Tocar som ao capturar</summary>
+    </key>
+    <key name="show-magnifier" type="b">
+      <default>true</default>
+      <summary>Mostrar lupa de precisão na seleção</summary>
+    </key>
+    <key name="show-panel-button" type="b">
+      <default>true</default>
+      <summary>Mostrar botão do OneShot no painel superior</summary>
+    </key>
+
+    <!-- ===================== Ferramentas ===================== -->
+    <key name="tool-color" type="s">
+      <default>'#ff3b47'</default>
+      <summary>Cor padrão das ferramentas</summary>
+    </key>
+    <key name="tool-width" type="i">
+      <range min="1" max="40"/>
+      <default>4</default>
+      <summary>Espessura padrão</summary>
+    </key>
+    <key name="font-size" type="i">
+      <range min="8" max="96"/>
+      <default>20</default>
+      <summary>Tamanho de fonte padrão</summary>
+    </key>
+    <key name="font-family" type="s">
+      <default>'Sans'</default>
+      <summary>Família da fonte do texto</summary>
+    </key>
+    <key name="color-palette" type="as">
+      <default><![CDATA[['#ff3b47', '#ff9f1a', '#ffd60a', '#32d74b', '#2f8cff', '#bf5af2', '#ffffff', '#111827']]]></default>
+      <summary>Cores rápidas da paleta</summary>
+    </key>
+    <key name="remember-last-tool" type="b">
+      <default>true</default>
+      <summary>Lembrar a última ferramenta usada</summary>
+    </key>
+    <key name="last-tool" type="s">
+      <default>'arrow'</default>
+      <summary>Última ferramenta usada (interno)</summary>
+    </key>
+
+    <!-- ===================== Aparência ===================== -->
+    <key name="accent-color" type="s">
+      <default>'#2f8cff'</default>
+      <summary>Cor de destaque</summary>
+    </key>
+    <key name="dim-opacity" type="d">
+      <range min="0.0" max="0.95"/>
+      <default>0.55</default>
+      <summary>Opacidade do escurecimento fora da seleção</summary>
+    </key>
+    <key name="icon-size" type="i">
+      <range min="14" max="32"/>
+      <default>18</default>
+      <summary>Tamanho dos ícones da barra de ferramentas</summary>
+    </key>
+
+    <!-- ===================== Gravação ===================== -->
+    <key name="video-fps" type="i">
+      <range min="5" max="60"/>
+      <default>30</default>
+      <summary>Quadros por segundo</summary>
+    </key>
+    <key name="video-quality" enum="org.gnome.shell.extensions.oneshot.VideoQuality">
+      <default>'medium'</default>
+      <summary>Qualidade do vídeo</summary>
+    </key>
+    <key name="record-cursor" type="b">
+      <default>true</default>
+      <summary>Mostrar o cursor na gravação</summary>
+    </key>
+    <key name="record-audio-mic" type="b">
+      <default>false</default>
+      <summary>Gravar áudio do microfone</summary>
+    </key>
+    <key name="record-audio-system" type="b">
+      <default>false</default>
+      <summary>Gravar áudio do sistema</summary>
+    </key>
+
+    <!-- ===================== Estado interno ===================== -->
+    <key name="last-capture-mode" type="s">
+      <default>''</default>
+      <summary>Modo da última captura (interno)</summary>
+    </key>
+    <key name="last-capture-area" type="ai">
+      <default>[]</default>
+      <summary>Área da última captura [x, y, w, h] (interno)</summary>
+    </key>
+  </schema>
+</schemalist>

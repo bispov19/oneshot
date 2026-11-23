@@ -1,0 +1,12 @@
+{
+  "uuid": "oneshot@vinicius",
+  "name": "OneShot",
+  "description": "Captura de tela e gravação de vídeo com editor de anotações completo, anotação ao vivo durante a gravação e atalhos personalizáveis.\n\nScreenshots and screen recording with a full annotation editor, live annotation while recording and customizable shortcuts.",
+  "shell-version": [
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.oneshot",
+  "gettext-domain": "oneshot",
+  "url": "https://github.com/bispov19/oneshot",
+  "version-name": "1.0.0"
+}
