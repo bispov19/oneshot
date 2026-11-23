@@ -1,0 +1,10 @@
+/* Estilos das preferências (GTK 4), carregados por prefs/about.js. */
+
+/* Card principal da aba "Sobre": acompanha os temas claro e escuro
+ * (--card-bg-color) com a borda na cor de destaque do OneShot. */
+.about-hero {
+    background-color: var(--card-bg-color);
+    border: 1.5px solid #2f8cff;
+    border-radius: 16px;
+    padding: 36px 24px 28px 24px;
+}

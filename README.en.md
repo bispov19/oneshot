@@ -1,4 +1,6 @@
-# OneShot
+<p align="center"><img src="icons/oneshot-logo.svg" width="128" alt="OneShot logo"></p>
+
+# OneShot — version 1.0.0
 
 *[Versão em português](README.md)*
 
@@ -9,6 +11,12 @@ Blue theme, custom icons, built for Wayland.
 - UUID: `oneshot@vinicius`
 - GNOME Shell: **51** (Fedora 44/45), Wayland
 - License: GPL-2.0-or-later
+
+## About me
+
+I'm **Vini**, a Web Developer who loves GNOME and free software. I build
+extensions that make the desktop prettier and more productive, like Orla Dock,
+AeroTask and OneShot. Profile: [github.com/bispov19](https://github.com/bispov19).
 
 ## Features
 

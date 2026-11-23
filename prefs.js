@@ -10,6 +10,7 @@ import {
     IMAGE_EXT, defaultScreenshotDir, defaultVideoDir, formatFilename,
 } from './lib/config.js';
 import {buildShortcutsPage} from './prefs/shortcuts.js';
+import {buildAboutPage, loadPrefsCss} from './prefs/about.js';
 import {
     colorRow, comboRow, folderRow, fontFamilyRow, spinRow, switchRow,
 } from './prefs/widgets.js';
@@ -27,6 +28,7 @@ export default class OneShotPreferences extends ExtensionPreferences {
         window.add(this._toolsPage(settings));
         window.add(buildShortcutsPage(settings));
         window.add(this._appearancePage(settings, window));
+        window.add(this._aboutPage(window));
     }
 
     /* ------------------------------- Captura ------------------------------- */
@@ -177,6 +179,26 @@ export default class OneShotPreferences extends ExtensionPreferences {
         page.add(g);
         page.add(this._resetGroup(settings, window));
         return page;
+    }
+
+    /* --------------------------------- Sobre -------------------------------- */
+    /** Só os DADOS; o layout fica em prefs/about.js. Versão e link vêm do metadata.json. */
+    _aboutPage(window) {
+        loadPrefsCss(this.dir, window);
+        return buildAboutPage({
+            logo: this.dir.get_child('icons').get_child('oneshot-logo.svg'),
+            name: 'OneShot',
+            description: 'Captura de tela e gravação de vídeo com editor de anotações completo e anotação ao vivo durante a gravação.',
+            version: String(this.metadata['version-name'] ?? this.metadata.version ?? '—'),
+            license: 'GPL-2.0 ou posterior',
+            url: this.metadata.url ?? 'https://github.com/bispov19/oneshot',
+            profile: 'https://github.com/bispov19',
+            author: 'Vini',
+            authorRole: 'Web Developer · Autor e mantenedor',
+            aboutMe: 'Desenvolvedor web apaixonado por GNOME e software livre. Crio extensões que deixam o desktop mais bonito e produtivo, como o Orla Dock, o AeroTask e o OneShot.',
+            features: 'Captura de região, janela, tela e monitor · Lupa de precisão · 14 ferramentas de anotação · Desfazer/refazer ilimitados · Salvar, copiar, salvar como, fixar na tela e abrir com · Gravação WebM com pausa e áudio · Anotação ao vivo durante a gravação',
+            notice: 'O OneShot é um projeto independente e de código aberto.',
+        });
     }
 
     /** Grupo com o botão "Restaurar padrões" (pede confirmação). */

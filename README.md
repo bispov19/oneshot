@@ -1,4 +1,6 @@
-# OneShot
+<p align="center"><img src="icons/oneshot-logo.svg" width="128" alt="Logo do OneShot"></p>
+
+# OneShot — versão 1.0.0
 
 *[English version](README.en.md)*
 
@@ -9,6 +11,12 @@ durante a gravação**. Tema azul, ícones próprios, feita para Wayland.
 - UUID: `oneshot@vinicius`
 - GNOME Shell: **51** (Fedora 44/45), Wayland
 - Licença: GPL-2.0-or-later
+
+## Sobre mim
+
+Sou o **Vini**, Web Developer apaixonado por GNOME e software livre. Crio
+extensões que deixam o desktop mais bonito e produtivo, como o Orla Dock, o
+AeroTask e o OneShot. Perfil: [github.com/bispov19](https://github.com/bispov19).
 
 ## Funções
 
@@ -143,7 +151,7 @@ journalctl --user -f -o cat /usr/bin/gnome-shell | grep -i oneshot
 
 ```
 extension.js            ponto de entrada (enable/disable) e coordenação
-prefs.js, prefs/        preferências (Adw/GTK4) e editor de atalhos
+prefs.js, prefs/        preferências (Adw/GTK4), editor de atalhos e aba Sobre
 lib/config.js           pastas, nome de arquivo (compartilhado com prefs)
 lib/keybindings.js      atalhos globais
 lib/notify.js           notificações com ações

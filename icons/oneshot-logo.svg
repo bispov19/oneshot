@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23232b"/>
+      <stop offset="1" stop-color="#0d0d11"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f8cff"/>
+      <stop offset="1" stop-color="#5ad1ff"/>
+    </linearGradient>
+    <linearGradient id="shutter" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4a57"/>
+      <stop offset="1" stop-color="#ff9a5c"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bg)"/>
+  <rect x="8.75" y="8.75" width="238.5" height="238.5" rx="55.25" fill="none" stroke="url(#rim)" stroke-width="1.5"/>
+  <!-- cantos do visor (seleção de região) -->
+  <g fill="none" stroke="url(#frame)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M62 102 V82 a20 20 0 0 1 20 -20 H102"/>
+    <path d="M154 62 H174 a20 20 0 0 1 20 20 V102"/>
+    <path d="M194 154 V174 a20 20 0 0 1 -20 20 H154"/>
+    <path d="M102 194 H82 a20 20 0 0 1 -20 -20 V154"/>
+  </g>
+  <!-- obturador: "um clique" -->
+  <circle cx="128" cy="128" r="22" fill="url(#shutter)"/>
+</svg>
