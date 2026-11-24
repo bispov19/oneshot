@@ -94,7 +94,6 @@ export default class OneShotPreferences extends ExtensionPreferences {
         behavior.add(switchRow(settings, 'capture-sound', 'Som ao capturar'));
         behavior.add(switchRow(settings, 'show-magnifier', 'Lupa de precisão',
             'Mostra a lupa com a cor do pixel ao selecionar'));
-        behavior.add(switchRow(settings, 'show-panel-button', 'Botão no painel superior'));
         page.add(behavior);
 
         // Notificações
@@ -171,6 +170,11 @@ export default class OneShotPreferences extends ExtensionPreferences {
     /* ------------------------------- Aparência ----------------------------- */
     _appearancePage(settings, window) {
         const page = new Adw.PreferencesPage({title: 'Aparência', icon_name: 'preferences-desktop-appearance-symbolic'});
+        const panel = new Adw.PreferencesGroup({title: 'Barra superior'});
+        panel.add(switchRow(settings, 'show-panel-button', 'Mostrar ícone na barra superior',
+            'Com o ícone oculto, os atalhos de teclado continuam funcionando'));
+        page.add(panel);
+
         const g = new Adw.PreferencesGroup({title: 'Overlay e barra de ferramentas'});
         g.add(colorRow(settings, 'accent-color', 'Cor de destaque', 'Seleção, botões ativos e indicadores'));
         g.add(spinRow(settings, 'dim-opacity', 'Escurecimento fora da seleção',

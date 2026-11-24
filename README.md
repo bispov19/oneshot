@@ -104,9 +104,9 @@ Pasta de capturas (padrão: `Imagens/Capturas de tela`, o mesmo nome traduzido
 que o GNOME usa) e de vídeos (padrão: `Vídeos/Screencasts` traduzido);
 formato PNG/JPG/WebP e qualidade; padrão do nome do arquivo com prévia
 (`%Y-%m-%d_%H-%M-%S`, `{mode}`…); cópia automática; atraso do timer; cursor;
-som; lupa; botão no painel; notificações (com “Abrir”, “Abrir pasta” e
+som; lupa; notificações (com “Abrir”, “Abrir pasta” e
 “Copiar”); cor/espessura/fonte padrão e lembrar a última ferramenta; cor de
-destaque, escurecimento e tamanho dos ícones; FPS, qualidade, cursor e áudio
+destaque, escurecimento e tamanho dos ícones; mostrar ou ocultar o ícone da barra superior; FPS, qualidade, cursor e áudio
 da gravação; botão **Restaurar padrões**.
 
 ## Instalação
